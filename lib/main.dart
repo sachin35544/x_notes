@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:x_notes/screen/home_screen.dart';
 import 'package:x_notes/screen/splash_screen.dart';
 import 'package:x_notes/services/app_config.dart';
-import 'package:x_notes/services/notification_service.dart'; // Import this
+import 'package:x_notes/services/notification_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await AppLinks.fetchConfig();
-  await NotificationService.init(); // Initialize Notifications
+  await NotificationService.init();
 
   runApp(const MyApp());
 }
@@ -43,7 +42,7 @@ class MyApp extends StatelessWidget {
           elevation: 0,
         ),
       ),
-      themeMode: ThemeMode.system, // Phone ki setting ke hisaab se chalega
+      themeMode: ThemeMode.system,
       home: SplashScreen(),
     );
   }
