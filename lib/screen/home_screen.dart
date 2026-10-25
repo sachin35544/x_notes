@@ -1,13 +1,17 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:x_notes/screen/view_note_screen.dart';
 import 'package:x_notes/services/database_helper.dart';
+
 import '../model/notes_model.dart';
 import 'add_edit_screen.dart';
 import 'reminder_screen.dart';
+
+// start app
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -416,9 +420,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _launchURL(String urlString) async {
     final Uri url = Uri.parse(urlString);
     if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text("Could not open link")));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("Could not open link")));
     }
   }
 
