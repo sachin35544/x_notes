@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:x_notes/screen/splash_screen.dart';
-import 'package:x_notes/services/app_config.dart';
 import 'package:x_notes/services/notification_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await AppLinks.fetchConfig();
   await NotificationService.init();
 
   runApp(const MyApp());

@@ -4,11 +4,10 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:x_notes/screen/view_note_screen.dart';
-import 'package:x_notes/services/app_config.dart';
 import 'package:x_notes/services/database_helper.dart';
 import '../model/notes_model.dart';
 import 'add_edit_screen.dart';
-import 'reminder_screen.dart'; // Reminder Screen Import
+import 'reminder_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -517,7 +516,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: Text("Share App", style: TextStyle(color: textColor)),
                   onTap: () {
                     Navigator.pop(context);
-                    Share.share(AppLinks.shareMessage);
+                    Share.share(
+                      "Check out X Notes - Simple & Secure Notes App: https://play.google.com/store/apps/details?id=com.sktechstudio.x_notes",
+                    );
                   },
                 ),
                 ListTile(
@@ -525,7 +526,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: Text("Rate Us", style: TextStyle(color: textColor)),
                   onTap: () {
                     Navigator.pop(context);
-                    _launchURL(AppLinks.rateUs);
+                    _launchURL(
+                      "https://play.google.com/store/apps/details?id=com.sktechstudio.x_notes",
+                    );
                   },
                 ),
                 ListTile(
@@ -536,7 +539,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   onTap: () {
                     Navigator.pop(context);
-                    _launchURL(AppLinks.privacyPolicy);
+                    _launchURL(
+                      "https://sktechstudio.blogspot.com/p/x-notes-privacy-policy.html",
+                    );
                   },
                 ),
                 ListTile(
@@ -547,15 +552,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   onTap: () {
                     Navigator.pop(context);
-                    _launchURL(AppLinks.termsConditions);
-                  },
-                ),
-                ListTile(
-                  leading: Icon(Icons.warning_amber_rounded, color: iconColor),
-                  title: Text("Disclaimer", style: TextStyle(color: textColor)),
-                  onTap: () {
-                    Navigator.pop(context);
-                    _launchURL(AppLinks.disclaimer);
+                    _launchURL(
+                      "https://sktechstudio.blogspot.com/p/x-notes-terms-conditions.html",
+                    );
                   },
                 ),
                 ListTile(
@@ -564,7 +563,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   onTap: () {
                     Navigator.pop(context);
                     _launchURL(
-                      "mailto:support@sktechstudio.com?subject=X%20Notes%20Feedback",
+                      "mailto:sktechstudio25@gmail.com?subject=X%20Notes%20Feedback",
                     );
                   },
                 ),
